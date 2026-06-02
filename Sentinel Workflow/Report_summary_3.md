@@ -2,97 +2,113 @@
 
 ## Scope
 
-This report evaluates unit test coverage and quality across 3 user stories.
+This report evaluates unit test coverage and quality across 2 user stories. The scope is restricted to test plans and execution records mapped to these user stories. Analysis excludes non-unit test activities and unrelated defect categories.
 
-These user stories form the baseline for evaluation. The scope is restricted to unit test plans and execution records mapped to these user stories.
+Coverage Boundary: The total number of user stories included in the analysis is 2, which form the baseline for evaluation.
 
-Included in scope:
-- Unit test cases linked to the identified user stories.
-- Test execution results covering executed, not executed, passed, and failed outcomes.
-- Defect data directly associated with these user stories.
+Inclusions:
+- Unit test cases linked to the identified user stories
+- Test execution results (executed, not executed, passed, failed)
+- Defect data directly associated with these user stories
 
-Excluded from scope:
-- Integration tests, system tests, and performance tests.
-- User stories not mapped to test cases.
-- External or unrelated defect logs.
-
-The baseline reference for measuring coverage, execution success, and defect quality is limited to the following user stories: LZ-001, BRZ-001, and STG-001.
+Exclusions:
+- Integration tests, system tests, or performance tests
+- User stories not mapped to test cases
 
 ## Test Coverage Summary
 
-Total Use Cases: 3
+Total Use Cases: 2
 
 Coverage Details:
 
 | Metric | Count | Description |
-|--------------------|-------|-----------------------------------------------------------------------------|
+|---|---:|---|
 | Fully Covered | 1 | User stories where all acceptance criteria are covered by test cases |
-| Partially Covered | 2 | User stories containing a mix of covered and uncovered acceptance criteria |
+| Partially Covered | 1 | User stories containing a mix of covered and uncovered acceptance criteria |
 | Not Covered | 0 | User stories where none of the acceptance criteria are covered by test cases |
 
 Coverage Gap Details:
 
-| User Story ID | AC ID | Acceptance Criteria | Impact Level | Coverage Status |
-|----------------|-------|---------------------|--------------|-----------------|
-| BRZ-001 | AC2 | Raw Format Preservation: Given the ingestion process, when data is landed in ADLS Gen2, then it must be stored in its source format (e.g., Parquet or Avro). | NULL | Partially Covered |
-| STG-001 | AC1 | Zone Creation: Given a new Data Lake account, when initialized, then separate root containers for /bronze, /silver, and /gold must be created. | NULL | Partially Covered |
+| User Story ID | AC ID | Coverage Gap Reason | Coverage Status |
+|---|---|---|---|
+| ORM-001 | AC4 | No testcase explicitly validates approval timestamp capture. | Partially Covered |
+| ORM-001 | AC5 | No testcase explicitly validates the $1000 threshold for high-value refunds. | Partially Covered |
+| SCM-002 | AC2 | No testcase explicitly validates resume date inclusion in notification. | Partially Covered |
+| SCM-002 | AC3 | No testcase explicitly validates scheduled resume date viewing. | Partially Covered |
+| SCM-002 | AC4 | No testcase explicitly validates pause start date capture in audit log. | Partially Covered |
+| SCM-002 | AC4 | No testcase explicitly validates timestamp capture in audit log. | Partially Covered |
+| SCM-002 | AC5 | No testcase explicitly validates that approval is required before pause activation. | Partially Covered |
+
+Coverage Score Details:
+
+Step-by-step Coverage Score Calculation:
+
+For ORM-001:
+- Count of Fully Covered Acceptance Criteria: 3 (AC1, AC2, AC3)
+- Count of Total Acceptance Criteria: 5
+- Coverage Score = (3/5) × 100 = 60.00%
+
+For SCM-002:
+- Count of Fully Covered Acceptance Criteria: 1 (AC1)
+- Count of Total Acceptance Criteria: 5
+- Coverage Score = (1/5) × 100 = 20.00%
 
 | User Story ID | Coverage Score | Color |
-|---------------|----------------|-------|
-| LZ-001 | 100.00% | 🟢 Green |
-| BRZ-001 | 90.00% | 🟢 Green |
-| STG-001 | 90.00% | 🟢 Green |
+|---|---:|---|
+| ORM-001 | 60.00% | 🔴 Red |
+| SCM-002 | 20.00% | 🔴 Red |
 
 Legend:
-
 - 🟢 Green (90–100%) → High coverage (meets quality expectations)
 - 🟠 Amber (70–89%) → Moderate coverage (requires attention)
 - 🔴 Red (<70%) → Low coverage (critical gaps present)
 
 Coverage Score Analysis:
 
-Coverage % = (Covered Acceptance Criteria / Total Acceptance Criteria) × 100
+Coverage Score (%) = (Fully Covered Acceptance Criteria for the User Story / Total Acceptance Criteria in the User Story) × 100
 
 Description:
-
-Coverage Percentage measures the extent to which acceptance criteria are validated by corresponding test cases. It indicates how completely the defined requirements are covered through testing.
+Coverage Score measures the extent to which the acceptance criteria of an individual user story are validated by corresponding test cases. It indicates how completely the requirements defined within that user story are covered through testing.
 
 Components:
-- Covered Acceptance Criteria: Number of acceptance criteria that have at least one mapped test case
-- Total Acceptance Criteria: Total number of acceptance criteria defined across user stories
+- Covered Acceptance Criteria for the User Story: Number of acceptance criteria within the user story that have at least one mapped test case.
+- Total Acceptance Criteria in the User Story: Total number of acceptance criteria defined for that specific user story.
+
+Calculation Scope:
+Coverage Score must be calculated separately for each user story using only the acceptance criteria belonging to that user story. Acceptance criteria from other user stories must not be included in the calculation.
 
 ## Test Execution Summary
 
-Total Test Cases Executed: 45
+Total Test Cases Executed: 30
 
-Total Test Cases Not Executed: 0
+Total Test Cases Passed: 25
 
-Total Test Cases Passed: 39
+Total Test Cases Failed: 5
 
-Total Test Cases Failed: 6
-
-Execution Success Rate: 86.67%
+Step-by-step Execution Success Rate Calculation:
+- Count of total Test cases Passed for all User Stories: 25
+- Count of Total Test Cases Executed for all User Stories: 30
+- Execution Success Rate = (25/30) × 100 = 83.33%
 
 Test Execution Summary Details:
 
-| User Story ID | Total Test Cases | Executed | Not Executed | Passed | Failed | Execution Rate | Pass Rate |
-|---------------|------------------|----------|--------------|--------|--------|----------------|-----------|
-| LZ-001 | 15 | 15 | 0 | 13 | 2 | 100.00% | 86.67% |
-| BRZ-001 | 15 | 15 | 0 | 13 | 2 | 100.00% | 86.67% |
-| STG-001 | 15 | 15 | 0 | 13 | 2 | 100.00% | 86.67% |
-
-Execution Success Rate = (Test Cases Passed / Test Cases Executed) × 100
+| User Story ID | Total Test Cases | Executed | Passed | Failed |
+|---|---:|---:|---:|---:|
+| ORM-001 | 15 | 15 | 12 | 3 |
+| SCM-002 | 15 | 15 | 13 | 2 |
 
 ## Defect Details
 
-Defect Rate: 13.33%
+Step-by-step Defect Rate Calculation:
+- Count of Total Defects for all User Stories: 5
+- Count of Total Test Cases for all User Stories: 30
+- Defect Rate = (5/30) × 100 = 16.67%
 
 Defect Rate Analysis:
 
 Defect Rate = (Total Defects / Total Test Cases) × 100
 
 Description:
-
 Defect Rate measures the proportion of defects identified during testing relative to the total number of test cases executed. It is a key quality metric used to evaluate system stability and testing effectiveness.
 
 Components:
@@ -101,25 +117,14 @@ Components:
 
 Defect Details:
 
-| Defect ID | Test Case ID | User Story ID | Defect Title | Defect Description | Category | Severity | Status |
-|-----------|--------------|---------------|--------------|--------------------|----------|----------|--------|
-| DEF_LZ-001_008 | UT_LZ-001_008 | LZ-001 | NULL | Dev-to-Prod network connection blocking was not observed as expected during execution. | network_segmentation | high | open |
-| DEF_LZ-001_013 | UT_LZ-001_013 | LZ-001 | NULL | Deployment with empty or null Cost Center tag value was not rejected as expected. | policy_enforcement | medium | open |
-| DEF_BRZ-001_002 | UT_BRZ-001_002 | BRZ-001 | NULL | Expected failure handling for offline Self-Hosted Integration Runtime did not occur as designed. | connectivity_runtime | high | open |
-| DEF_BRZ-001_009 | UT_BRZ-001_009 | BRZ-001 | NULL | Pipeline did not terminate and alert correctly after 3 retry attempts under persistent network failure. | retry_logic | high | open |
-| DEF_STG-001_004 | UT_STG-001_004 | STG-001 | NULL | Missing domain folder handling did not auto-create or reject ingestion as expected. | folder_hierarchy | medium | open |
-| DEF_STG-001_011 | UT_STG-001_011 | STG-001 | NULL | User with Bronze-only access was not denied Gold container access as expected. | access_control | critical | open |
+| Defect ID | Test Case ID | User Story ID | Defect Description |
+|---|---|---|---|
+| DEF-ORM-001 | UT_ORM_005 | ORM-001 | Notification template rendering issue |
+| DEF-ORM-002 | UT_ORM_009 | ORM-001 | Status history service timeout |
+| DEF-ORM-003 | UT_ORM_015 | ORM-001 | Refund workflow synchronization error |
+| DEF-SCM-101 | TP_SCM_012 | SCM-002 | Pause reason not captured consistently |
+| DEF-SCM-102 | TP_SCM_015 | SCM-002 | Activation allowed without completed approval |
 
 ## Conclusion
 
-Summary of Findings
-
-A total of 3 user stories were reviewed. Coverage distribution shows 1 fully covered user story, 2 partially covered user stories, and 0 not covered user stories. The overall test coverage rate is 93.30%, the execution success rate is 86.67%, and the defect rate is 13.33%.
-
-Final Outcome Statement
-
-The overall average coverage score is 93.30%, and the overall execution stability is 86.67%. Defect severity includes high, medium, and critical open defects. Based on these reported values, remediation is required before progression.
-
-Conclusion Statement
-
-The current unit test suite demonstrates broad mapped coverage across the evaluated user stories; however, open failed tests and recorded critical, high, and medium defects indicate that remediation is required before proceeding.
+Remediation is required as test case failures and defects exist in the current test suite.
