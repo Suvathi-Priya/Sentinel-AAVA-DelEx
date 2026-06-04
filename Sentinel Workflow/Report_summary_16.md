@@ -13,7 +13,7 @@ The user stories form the baseline for evaluation, and the scope is limited to u
 **Coverage Details:**
 
 | Metric | Count | Description |
-|--------|-------|-------------|
+|---|---:|---|
 | Fully Covered | 0 | User stories where all acceptance criteria are Fully Covered |
 | Partially Covered | 2 | User stories containing one or more Partially Covered acceptance criteria |
 | Not Covered | 0 | User stories where all acceptance criteria are Not Covered |
@@ -21,7 +21,7 @@ The user stories form the baseline for evaluation, and the scope is limited to u
 **Coverage Gap Details:**
 
 | User Story ID | AC ID | Coverage Gap Reason | Coverage Status |
-|---------------|-------|-------------------|-----------------|
+|---|---|---|---|
 | CLP-001 | AC5 | No testcase explicitly validates fraud review requirement. | Partially Covered |
 | CNS-001 | AC4 | No testcase explicitly validates timestamp capture in notification logs. | Partially Covered |
 | CNS-001 | AC5 | No testcase explicitly validates the retry limit of 3 times. | Partially Covered |
@@ -29,11 +29,9 @@ The user stories form the baseline for evaluation, and the scope is limited to u
 **Coverage Score:**
 
 | User Story ID | Coverage Score | Color |
-|---------------|----------------|-------|
+|---|---:|---|
 | CLP-001 | 80.00% | 🟠 Amber |
-| CNS-001 | 60.00% | 🔴 Red |
-
-**Legend:**
+| CNS-001 | 40.00% | 🔴 Red |
 
 Green (90–100%) → High coverage (meets quality expectations)
 
@@ -41,23 +39,9 @@ Amber (70–89%) → Moderate coverage (requires attention)
 
 Red (<70%) → Low coverage (critical gaps present)
 
-**Coverage Score Analysis:**
-
 Coverage Score (%) = (Fully Covered Acceptance Criteria for the User Story / Total Acceptance Criteria in the User Story) × 100
 
-**Description:**
-
 Coverage Score measures the extent to which the acceptance criteria of an individual user story are validated by corresponding test cases. It indicates how completely the requirements defined within that user story are covered through testing.
-
-**Components:**
-
-Covered Acceptance Criteria for the User Story: Number of acceptance criteria within the user story that have at least one mapped test case.
-
-Total Acceptance Criteria in the User Story: Total number of acceptance criteria defined for that specific user story.
-
-**Calculation Scope:**
-
-Coverage Score must be calculated separately for each user story using only the acceptance criteria belonging to that user story. Acceptance criteria from other user stories must not be included in the calculation.
 
 ## Test Execution Summary
 
@@ -72,7 +56,7 @@ Total Test Cases Failed: 6
 **Test Execution Summary:**
 
 | User Story ID | Total Test Cases | Executed | Passed | Failed |
-|---------------|------------------|----------|--------|--------|
+|---|---:|---:|---:|---:|
 | CLP-001 | 13 | 15 | 12 | 3 |
 | CNS-001 | 15 | 13 | 10 | 3 |
 
@@ -81,7 +65,7 @@ Total Test Cases Failed: 6
 **Data Mapping Inconsistency Details:**
 
 | Test Case ID | Consistency Type | Description | User Story ID | AC ID | Impact Level |
-|--------------|------------------|-------------|---------------|-------|--------------|
+|---|---|---|---|---|---|
 | UT_CLP_014 | missing_testcase | Mapped testcase definition is missing for testcase ID: UT_CLP_014 | CLP-001 | AC5 | High |
 | UT_CLP_015 | missing_testcase | Mapped testcase definition is missing for testcase ID: UT_CLP_015 | CLP-001 | AC5 | High |
 | UT_CNS_014 | missing_testlog | Execution log is missing for testcase ID: UT_CNS_014 | CNS-001 | AC5 | Medium |
@@ -90,7 +74,7 @@ Total Test Cases Failed: 6
 **Consistency Metrics Summary:**
 
 | Metric | Count |
-|--------|-------|
+|---|---|
 | Total Test Cases | 28 |
 | Total Test Logs | 28 |
 | Missing Test Cases | 2 |
@@ -101,24 +85,12 @@ Total Test Cases Failed: 6
 
 **Defect Rate:** 21.43%
 
-**Defect Rate Analysis:**
-
 Defect Rate = (Total Defects / Total Test Cases) × 100
-
-**Description:**
 
 Defect Rate measures the proportion of defects identified during testing relative to the total number of test cases executed. It is a key quality metric used to evaluate system stability and testing effectiveness.
 
-**Components:**
-
-Total Defects: Total number of defects identified during the test cycle
-
-Total Test Cases: Total number of test cases executed
-
-**Defect Details:**
-
 | Defect ID | Test Case ID | User Story ID | Defect Description |
-|-----------|--------------|---------------|-------------------|
+|---|---|---|---|
 | DEF-CLP-001 | UT_CLP_003 | CLP-001 | Points posting service delay |
 | DEF-CLP-002 | UT_CLP_008 | CLP-001 | Balance refresh cache issue |
 | DEF-CLP-003 | UT_CLP_015 | CLP-001 | Redemption workflow synchronization issue |
@@ -128,4 +100,4 @@ Total Test Cases: Total number of test cases executed
 
 ## Conclusion
 
-Remediation is required as test case failures and defects exist in the unit test suite. The report indicates outstanding coverage gaps and execution issues that must be addressed before progression.
+Remediation is required as test case failures and defects exist in the current test suite. The report indicates outstanding coverage gaps and execution issues that must be addressed before progression.
