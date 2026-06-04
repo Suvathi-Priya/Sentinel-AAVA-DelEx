@@ -34,8 +34,8 @@ The user stories form the baseline for evaluation, and the scope is limited to u
 
 | User Story ID | Coverage Score | Color |
 |---------------|----------------|-------|
-| ORM-001 | 60.00% | 🔴 Red |
-| SCM-002 | 0.00% | 🔴 Red |
+| ORM-001 | 60.00% 🔴 | Red |
+| SCM-002 | 0.00% 🔴 | Red |
 
 ## Test Execution Summary
 
@@ -58,7 +58,7 @@ Total Test Cases Failed: 5
 
 **Data Mapping Inconsistency Details:**
 
-No inconsistencies reported.
+No inconsistency details provided.
 
 **Consistency Metrics Summary:**
 
@@ -82,4 +82,4 @@ No inconsistencies reported.
 
 ## Conclusion
 
-Remediation is required as both user stories have coverage gaps and defects exist in the test execution results.
+Remediation is required as multiple coverage gaps exist across both user stories and 5 defects have been identified during test execution.
