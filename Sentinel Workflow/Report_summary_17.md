@@ -4,124 +4,111 @@
 
 This report evaluates unit test coverage and quality across 2 user stories. The scope is restricted to test plans and execution records mapped to these user stories. Analysis excludes non-unit test activities and unrelated defect categories.
 
-**Total User Stories:** 2
-
-The user stories form the baseline for evaluation, and the scope is limited to unit test coverage and execution records mapped to these user stories.
+**Coverage Boundary:** The total number of user stories included in the analysis is 2, forming the baseline for evaluation. The scope is limited to unit test coverage and execution records mapped to these user stories.
 
 **Inclusions:**
+
 - Unit test cases linked to the identified user stories
 - Test execution results (executed, not executed, passed, failed)
 - Defect data directly associated with these user stories
 
 **Exclusions:**
+
 - Integration tests, system tests, or performance tests
 - User stories not mapped to test cases
 
+**Baseline Definition:** The user stories serve as the baseline reference for measuring coverage, execution success, and defect quality.
+
 ## Test Coverage Summary
 
-**Coverage Details:**
+**Total User Stories:** 2
+
+### Coverage Details
 
 | Metric | Count | Description |
-|--------|-------|-------------|
+|---|---:|---|
 | Fully Covered | 0 | User stories where all acceptance criteria are Fully Covered |
-| Partially Covered | 2 | User stories containing one or more Partially Covered acceptance criteria |
-| Not Covered | 0 | User stories where all acceptance criteria are Not Covered |
+| Partially Covered | 1 | User stories containing one or more Partially Covered acceptance criteria |
+| Not Covered | 1 | User stories where all acceptance criteria are Not Covered |
 
-**Coverage Gap Details:**
+### Coverage Gap Details
 
 | User Story ID | AC ID | Coverage Gap Reason | Coverage Status |
-|---------------|-------|-------------------|-----------------|
-| CLP-001 | AC5 | No testcase explicitly validates fraud review requirement. | Partially Covered |
-| CNS-001 | AC4 | No testcase explicitly validates timestamp capture. | Partially Covered |
-| CNS-001 | AC5 | No testcase explicitly validates the retry limit of 3 times. | Partially Covered |
+|---|---|---|---|
+| PGI-001 | AC1 | No testcase explicitly validates available balance check. | Partially Covered |
+| PGI-001 | AC1 | No testcase explicitly validates merchant authorization. | Partially Covered |
+| PGI-001 | AC2 | No testcase explicitly validates amount in email confirmation. | Partially Covered |
+| PGI-001 | AC2 | No testcase explicitly validates date in email confirmation. | Partially Covered |
+| PGI-001 | AC2 | No testcase explicitly validates merchant name in email confirmation. | Partially Covered |
+| PGI-001 | AC2 | No testcase explicitly validates 2 minute delivery time threshold. | Partially Covered |
+| PGI-001 | AC3 | No testcase explicitly validates that payment transactions are logged. | Partially Covered |
+| PGI-001 | AC4 | No testcase explicitly validates exponential backoff retry strategy. | Partially Covered |
+| PGI-001 | AC5 | No testcase explicitly validates 5 business day processing time threshold. | Partially Covered |
+| OMS-001 | AC1 | No testcase mapped to this acceptance criterion. | Not Covered |
+| OMS-001 | AC1 | No testcase mapped to this acceptance criterion. | Not Covered |
+| OMS-001 | AC1 | No testcase mapped to this acceptance criterion. | Not Covered |
+| OMS-001 | AC1 | No testcase mapped to this acceptance criterion. | Not Covered |
+| OMS-001 | AC1 | No testcase mapped to this acceptance criterion. | Not Covered |
+| OMS-001 | AC1 | No testcase mapped to this acceptance criterion. | Not Covered |
+| OMS-001 | AC2 | No testcase mapped to this acceptance criterion. | Not Covered |
+| OMS-001 | AC2 | No testcase mapped to this acceptance criterion. | Not Covered |
+| OMS-001 | AC2 | No testcase mapped to this acceptance criterion. | Not Covered |
+| OMS-001 | AC2 | No testcase mapped to this acceptance criterion. | Not Covered |
+| OMS-001 | AC2 | No testcase mapped to this acceptance criterion. | Not Covered |
+| OMS-001 | AC2 | No testcase mapped to this acceptance criterion. | Not Covered |
+| OMS-001 | AC3 | No testcase mapped to this acceptance criterion. | Not Covered |
+| OMS-001 | AC3 | No testcase mapped to this acceptance criterion. | Not Covered |
+| OMS-001 | AC4 | No testcase mapped to this acceptance criterion. | Not Covered |
+| OMS-001 | AC4 | No testcase mapped to this acceptance criterion. | Not Covered |
+| OMS-001 | AC4 | No testcase mapped to this acceptance criterion. | Not Covered |
+| OMS-001 | AC4 | No testcase mapped to this acceptance criterion. | Not Covered |
+| OMS-001 | AC4 | No testcase mapped to this acceptance criterion. | Not Covered |
+| OMS-001 | AC4 | No testcase mapped to this acceptance criterion. | Not Covered |
+| OMS-001 | AC4 | No testcase mapped to this acceptance criterion. | Not Covered |
+| OMS-001 | AC5 | No testcase mapped to this acceptance criterion. | Not Covered |
+| OMS-001 | AC5 | No testcase mapped to this acceptance criterion. | Not Covered |
 
-**Coverage Score:**
+### Coverage Score
 
 | User Story ID | Coverage Score | Color |
-|---------------|----------------|-------|
-| CLP-001 | 80.00% | 🟠 Amber |
-| CNS-001 | 40.00% | 🔴 Red |
-
-**Legend:**
-- 🟢 Green (90–100%) → High coverage (meets quality expectations)
-- 🟠 Amber (70–89%) → Moderate coverage (requires attention)
-- 🔴 Red (<70%) → Low coverage (critical gaps present)
-
-**Coverage Score Analysis:**
-
-Coverage Score (%) = (Fully Covered Acceptance Criteria for the User Story / Total Acceptance Criteria in the User Story) × 100
-
-**Description:**
-Coverage Score measures the extent to which the acceptance criteria of an individual user story are validated by corresponding test cases. It indicates how completely the requirements defined within that user story are covered through testing.
-
-**Components:**
-- Covered Acceptance Criteria for the User Story: Number of acceptance criteria within the user story that have at least one mapped test case
-- Total Acceptance Criteria in the User Story: Total number of acceptance criteria defined for that specific user story
+|---|---:|---|
+| PGI-001 | 0.00% | 🔴 Red |
+| OMS-001 | 0.00% | 🔴 Red |
 
 ## Test Execution Summary
 
-**Overall Test Execution Summary:**
-
-Total Test Cases Executed: 28
-
-Total Test Cases Passed: 22
-
-Total Test Cases Failed: 6
-
-**Test Execution Summary:**
+### Test Execution Summary
 
 | User Story ID | Total Test Cases | Executed | Passed | Failed |
-|---------------|------------------|----------|--------|--------|
-| CLP-001 | 13 | 15 | 12 | 3 |
-| CNS-001 | 15 | 13 | 10 | 3 |
+|---|---:|---:|---:|---:|
+| PGI-001 | 15 | 15 | 11 | 4 |
+| OMS-001 | 0 | 0 | 0 | 0 |
 
 ## Consistency Analysis
 
-**Data Mapping Inconsistency Details:**
+### Data Mapping Inconsistency Details
 
-| Test Case ID | Consistency Type | Description | User Story ID | AC ID | Impact Level |
-|--------------|------------------|-------------|---------------|-------|--------------|
-| UT_CLP_014 | missing_testcase | Mapped testcase definition is missing for testcase ID: UT_CLP_014 | CLP-001 | NULL | High |
-| UT_CLP_015 | missing_testcase | Mapped testcase definition is missing for testcase ID: UT_CLP_015 | CLP-001 | NULL | High |
-| UT_CNS_014 | missing_testlog | Execution log is missing for testcase ID: UT_CNS_014 | CNS-001 | NULL | Medium |
-| UT_CNS_015 | missing_testlog | Execution log is missing for testcase ID: UT_CNS_015 | CNS-001 | NULL | Medium |
+No data.
 
-**Consistency Metrics Summary:**
+### Consistency Metrics Summary
 
 | Metric | Count |
-|--------|-------|
-| Total Test Cases | 28 |
-| Total Test Logs | 28 |
-| Missing Test Cases | 2 |
-| Missing Test Logs | 2 |
-| Consistency Status | Mismatch Detected |
+|---|---|
+| Total Test Cases | 15 |
+| Total Test Logs | 15 |
+| Missing Test Cases | 0 |
+| Missing Test Logs | 0 |
+| Consistency Status | Consistent |
 
 ## Defect Details
 
-**Defect Rate:** 21.43%
-
-**Defect Rate Analysis:**
-
-Defect Rate = (Total Defects / Total Test Cases) × 100
-
-**Description:**
-Defect Rate measures the proportion of defects identified during testing relative to the total number of test cases executed. It is a key quality metric used to evaluate system stability and testing effectiveness.
-
-**Components:**
-- Total Defects: Total number of defects identified during the test cycle
-- Total Test Cases: Total number of test cases executed
-
-**Defect Details:**
-
 | Defect ID | Test Case ID | User Story ID | Defect Description |
-|-----------|--------------|---------------|-------------------|
-| DEF-CLP-001 | UT_CLP_003 | CLP-001 | Points posting service delay |
-| DEF-CLP-002 | UT_CLP_008 | CLP-001 | Balance refresh cache issue |
-| DEF-CLP-003 | UT_CLP_015 | CLP-001 | Redemption workflow synchronization issue |
-| DEF-CNS-001 | UT_CNS_004 | CNS-001 | SMS gateway timeout prevents delivery |
-| DEF-CNS-002 | UT_CNS_006 | CNS-001 | SMS tracking service failed to update status |
-| DEF-CNS-003 | UT_CNS_009 | CNS-001 | Push notification service unavailable |
+|---|---|---|---|
+| DEF-PGI-001 | UT_PGI_003 | PGI-001 | Payment processing response exceeds 10 second SLA under concurrent load |
+| DEF-PGI-002 | UT_PGI_005 | PGI-001 | Email confirmation template missing merchant name field |
+| DEF-PGI-003 | UT_PGI_012 | PGI-001 | Alert notification service failed to dispatch operations team alert on final retry exhaustion |
+| DEF-PGI-004 | UT_PGI_015 | PGI-001 | Refund status notification service did not trigger customer email on status change |
 
 ## Conclusion
 
-Remediation is required as test case failures and defects exist in the current test suite. The report indicates outstanding coverage gaps and execution issues that must be addressed before progression.
+Remediation is required as user story OMS-001 is Not Covered and defects exist in the test execution results.
