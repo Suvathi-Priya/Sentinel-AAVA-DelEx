@@ -4,11 +4,22 @@
 
 This report evaluates unit test coverage and quality across 2 user stories. The scope is restricted to test plans and execution records mapped to these user stories. Analysis excludes non-unit test activities and unrelated defect categories.
 
-The baseline for this analysis consists of 2 user stories that form the reference for measuring coverage, execution success, and defect quality. The scope is limited to unit test coverage and execution records mapped to these user stories.
-
 **Total User Stories:** 2
 
+The 2 user stories form the baseline for evaluation. The scope is limited to unit test coverage and execution records mapped to these user stories.
+
+**Inclusions:**
+- Unit test cases linked to the identified user stories
+- Test execution results (executed, not executed, passed, failed)
+- Defect data directly associated with these user stories
+
+**Exclusions:**
+- Integration tests, system tests, or performance tests
+- User stories not mapped to test cases
+
 ## Test Coverage Summary
+
+**Coverage Details:**
 
 | Metric | Count | Description |
 |--------|-------|-------------|
@@ -16,29 +27,29 @@ The baseline for this analysis consists of 2 user stories that form the referenc
 | Partially Covered | 2 | User stories containing one or more Partially Covered acceptance criteria |
 | Not Covered | 0 | User stories where all acceptance criteria are Not Covered |
 
+**Coverage Gap Details:**
+
 | User Story ID | AC ID | Coverage Gap Reason | Coverage Status |
 |---------------|-------|-------------------|-----------------|
 | PGI-001 | AC1 | No testcase explicitly validates available balance check. | Partially Covered |
 | PGI-001 | AC1 | No testcase explicitly validates merchant authorization. | Partially Covered |
-| PGI-001 | AC2 | No testcase explicitly validates amount field in email confirmation. | Partially Covered |
-| PGI-001 | AC2 | No testcase explicitly validates date field in email confirmation. | Partially Covered |
-| PGI-001 | AC2 | No testcase explicitly validates merchant name field in email confirmation. | Partially Covered |
-| PGI-001 | AC2 | No testcase explicitly validates 2 minute delivery threshold. | Partially Covered |
+| PGI-001 | AC2 | No testcase explicitly validates that email confirmation contains amount. | Partially Covered |
+| PGI-001 | AC2 | No testcase explicitly validates that email confirmation contains date. | Partially Covered |
+| PGI-001 | AC2 | No testcase explicitly validates that email confirmation contains merchant name. | Partially Covered |
+| PGI-001 | AC2 | No testcase explicitly validates the 2 minute delivery threshold. | Partially Covered |
 | PGI-001 | AC3 | No testcase explicitly validates that payment transactions are logged. | Partially Covered |
-| OMS-001 | AC2 | No testcase explicitly validates order status update to Cancelled. | Partially Covered |
 | OMS-001 | AC4 | No testcase explicitly validates that order events are logged. | Partially Covered |
 
-| User Story ID | Color |
-|---------------|-------|
-| PGI-001 | Red 🔴 |
-| OMS-001 | Red 🔴 |
+**Coverage Score:**
+
+| User Story ID | Coverage Score Percentage | Color |
+|---------------|---------------------------|-------|
+| PGI-001 | 40.00% | 🔴 Red |
+| OMS-001 | 60.00% | 🔴 Red |
 
 ## Test Execution Summary
 
-| User Story ID | Total Test Cases | Executed | Passed | Failed |
-|---------------|------------------|----------|--------|--------|
-| PGI-001 | 17 | 17 | 13 | 4 |
-| OMS-001 | 15 | 15 | 12 | 3 |
+**Overall Test Execution Summary:**
 
 Total Test Cases Executed: 32
 
@@ -46,7 +57,20 @@ Total Test Cases Passed: 25
 
 Total Test Cases Failed: 7
 
+**Test Execution Summary:**
+
+| User Story ID | Total Test Cases | Executed | Passed | Failed |
+|---------------|------------------|----------|--------|--------|
+| PGI-001 | 17 | 17 | 13 | 4 |
+| OMS-001 | 15 | 15 | 12 | 3 |
+
 ## Consistency Analysis
+
+**Data Mapping Inconsistency Details:**
+
+No inconsistency details provided.
+
+**Consistency Metrics Summary:**
 
 | Metric | Count |
 |---------|-------|
