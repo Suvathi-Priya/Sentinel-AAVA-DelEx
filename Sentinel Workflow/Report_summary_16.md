@@ -6,11 +6,11 @@ This report evaluates unit test coverage and quality across 2 user stories. The 
 
 **Total User Stories:** 2
 
-The user stories form the baseline for evaluation, and the scope is limited to unit test coverage and execution records mapped to these user stories.
+The user stories form the baseline for evaluation, and the scope is limited to unit test coverage and execution records mapped to these user stories. Unit test cases linked to the identified user stories, test execution results (executed, not executed, passed, failed), and defect data directly associated with these user stories are explicitly covered. Integration tests, system tests, performance tests, and user stories not mapped to test cases are excluded from this analysis.
 
 ## Test Coverage Summary
 
-**Coverage Details:**
+### Coverage Details
 
 | Metric | Count | Description |
 |--------|-------|-------------|
@@ -18,7 +18,7 @@ The user stories form the baseline for evaluation, and the scope is limited to u
 | Partially Covered | 2 | User stories containing one or more Partially Covered acceptance criteria |
 | Not Covered | 0 | User stories where all acceptance criteria are Not Covered |
 
-**Coverage Gap Details:**
+### Coverage Gap Details
 
 | User Story ID | AC ID | Coverage Gap Reason | Coverage Status |
 |---------------|-------|-------------------|-----------------|
@@ -26,50 +26,44 @@ The user stories form the baseline for evaluation, and the scope is limited to u
 | CNS-001 | AC4 | No testcase explicitly validates timestamp capture in notification logs. | Partially Covered |
 | CNS-001 | AC5 | No testcase explicitly validates the retry limit of 3 times. | Partially Covered |
 
-**Coverage Score:**
+### Coverage Score
 
 | User Story ID | Coverage Score | Color |
 |---------------|----------------|-------|
 | CLP-001 | 80.00% | 🟠 Amber |
 | CNS-001 | 40.00% | 🔴 Red |
 
-**Legend:**
+### Legend
 
-🟢 Green (90–100%) → High coverage (meets quality expectations)
+Green (90–100%) → High coverage (meets quality expectations)  
+Amber (70–89%) → Moderate coverage (requires attention)  
+Red (<70%) → Low coverage (critical gaps present)
 
-🟠 Amber (70–89%) → Moderate coverage (requires attention)
-
-🔴 Red (<70%) → Low coverage (critical gaps present)
-
-**Coverage Score Analysis:**
+### Coverage Score Analysis
 
 Coverage Score (%) = (Fully Covered Acceptance Criteria for the User Story / Total Acceptance Criteria in the User Story) × 100
 
 **Description:**
-
 Coverage Score measures the extent to which the acceptance criteria of an individual user story are validated by corresponding test cases. It indicates how completely the requirements defined within that user story are covered through testing.
 
 **Components:**
-
-Covered Acceptance Criteria for the User Story: Number of acceptance criteria within the user story that have at least one mapped test case.
-
-Total Acceptance Criteria in the User Story: Total number of acceptance criteria defined for that specific user story.
+- Covered Acceptance Criteria for the User Story: Number of acceptance criteria within the user story that have at least one mapped test case.
+- Total Acceptance Criteria in the User Story: Total number of acceptance criteria defined for that specific user story.
 
 **Calculation Scope:**
-
 Coverage Score must be calculated separately for each user story using only the acceptance criteria belonging to that user story. Acceptance criteria from other user stories must not be included in the calculation.
 
 ## Test Execution Summary
 
-**Overall Test Execution Summary:**
+### Overall Test Execution Summary
 
-Total Test Cases Executed: 28
+**Total Test Cases Executed:** 28
 
-Total Test Cases Passed: 22
+**Total Test Cases Passed:** 22
 
-Total Test Cases Failed: 6
+**Total Test Cases Failed:** 6
 
-**Test Execution Summary:**
+### Test Execution Summary
 
 | User Story ID | Total Test Cases | Executed | Passed | Failed |
 |---------------|------------------|----------|--------|--------|
@@ -78,16 +72,16 @@ Total Test Cases Failed: 6
 
 ## Consistency Analysis
 
-**Data Mapping Inconsistency Details:**
+### Data Mapping Inconsistency Details
 
 | Test Case ID | Consistency Type | Description | User Story ID | AC ID | Impact Level |
 |--------------|------------------|-------------|---------------|-------|--------------|
-| UT_CLP_014 | missing_testcase | Mapped testcase definition is missing for testcase ID: UT_CLP_014 | CLP-001 | AC5 | High |
-| UT_CLP_015 | missing_testcase | Mapped testcase definition is missing for testcase ID: UT_CLP_015 | CLP-001 | AC5 | High |
-| UT_CNS_014 | missing_testlog | Execution log is missing for testcase ID: UT_CNS_014 | CNS-001 | AC5 | Medium |
-| UT_CNS_015 | missing_testlog | Execution log is missing for testcase ID: UT_CNS_015 | CNS-001 | AC5 | Medium |
+| UT_CLP_014 | missing_testcase | Mapped testcase definition is missing for testcase ID: UT_CLP_014 | CLP-001 | NULL | High |
+| UT_CLP_015 | missing_testcase | Mapped testcase definition is missing for testcase ID: UT_CLP_015 | CLP-001 | NULL | High |
+| UT_CNS_014 | missing_testlog | Execution log is missing for testcase ID: UT_CNS_014 | CNS-001 | NULL | Medium |
+| UT_CNS_015 | missing_testlog | Execution log is missing for testcase ID: UT_CNS_015 | CNS-001 | NULL | Medium |
 
-**Consistency Metrics Summary:**
+### Consistency Metrics Summary
 
 | Metric | Count |
 |--------|-------|
@@ -101,21 +95,18 @@ Total Test Cases Failed: 6
 
 **Defect Rate:** 21.43%
 
-**Defect Rate Analysis:**
+### Defect Rate Analysis
 
 Defect Rate = (Total Defects / Total Test Cases) × 100
 
 **Description:**
-
 Defect Rate measures the proportion of defects identified during testing relative to the total number of test cases executed. It is a key quality metric used to evaluate system stability and testing effectiveness.
 
 **Components:**
+- Total Defects: Total number of defects identified during the test cycle
+- Total Test Cases: Total number of test cases executed
 
-Total Defects: Total number of defects identified during the test cycle
-
-Total Test Cases: Total number of test cases executed
-
-**Defect Details:**
+### Defect Details
 
 | Defect ID | Test Case ID | User Story ID | Defect Description |
 |-----------|--------------|---------------|-------------------|
