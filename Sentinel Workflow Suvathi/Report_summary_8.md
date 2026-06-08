@@ -6,121 +6,83 @@ This report evaluates unit test coverage and quality across 2 user stories. The 
 
 **Total User Stories:** 2
 
-The 2 user stories form the baseline for evaluation. The scope is limited to unit test coverage and execution records mapped to these user stories.
-
-**Inclusions:**
-
-- Unit test cases linked to the identified user stories
-- Test execution results (executed, not executed, passed, failed)
-- Defect data directly associated with these user stories
-
-**Exclusions:**
-
-- Integration tests, system tests, or performance tests
-- User stories not mapped to test cases
+The baseline for this analysis consists of 2 user stories that form the reference for measuring coverage, execution success, and defect quality. The scope is limited to unit test coverage and execution records mapped to these user stories.
 
 ## Test Coverage Summary
 
-**Coverage Details:**
+**Overall Coverage Score:** 70.0%
 
-| Metric | Count | Description |
-|---|---:|---|
-| Fully Covered | 0 | User stories where all acceptance criteria are Fully Covered |
-| Partially Covered | 2 | User stories containing one or more Partially Covered acceptance criteria |
-| Not Covered | 0 | User stories where all acceptance criteria are Not Covered |
-
-**Overall Coverage Score:** 60.0%
-
-## Formula Analysis for Overall Coverage Score
-
-**Metric Value:** 60.0%
+### Formula Analysis for Overall Coverage Score
 
 **Formula:** `(fully_covered_acceptance_criterias_in_all_user_stories / total_acceptance_criterias_in_all_user_stories) × 100`
 
-**Description:** Overall Coverage Score measures the percentage of fully covered acceptance criterias across all user stories.
+**Calculation:** `(7 / 10) × 100 = 70.00`
 
-**Components:**
+**Coverage Gap Details**
 
-- fully_covered_acceptance_criterias_in_all_user_stories: 6
-- total_acceptance_criterias_in_all_user_stories: 10
-- overall_coverage_score_calculation: `(6 / 10) × 100 = 60.00`
+| User Story ID | AC ID | Missing Requirement | Gap Reason | Coverage Status |
+|---|---|---|---|---|
+| CLP-001 | AC5 | require fraud review | No testcase explicitly validates fraud review requirement. | Partially Covered |
+| CNS-001 | AC4 | capture timestamp | No testcase explicitly validates timestamp capture. | Partially Covered |
+| CNS-001 | AC5 | retry attempts up to 3 times | No testcase explicitly validates the retry limit of 3 times. | Partially Covered |
 
-**Coverage Gap Details:**
+**Coverage Score**
 
-| User Story ID | AC ID | Coverage Gap Reason | Coverage Status |
+| User Story ID | Title | Coverage Score | Icon Rendering Instruction for Coverage Colors |
 |---|---|---|---|
-| CLP-001 | AC5 | No testcase explicitly validates fraud review requirement. | Partially Covered |
-| CNS-001 | AC4 | No testcase explicitly validates timestamp capture in notification logs. | Partially Covered |
-| CNS-001 | AC5 | No testcase explicitly validates the retry limit of 3 times. | Partially Covered |
-
-**Coverage Score:**
-
-| User Story ID | Coverage Score | Color |
-|---|---:|---|
-| CLP-001 | 80.00% | 🟠 Amber |
-| CNS-001 | 40.00% | 🔴 Red |
+| CLP-001 | Implement Customer Loyalty Points Service | 80.0% | 🟠 Amber |
+| CNS-001 | Implement Customer Notification Service | 60.0% | 🔴 Red |
 
 ## Test Execution Summary
 
-**Overall Test Execution Summary:**
+| Scope | Total Test Cases in All Test Plan | Total Test Cases in All Test Logs | Total Passed in All Test Logs | Total Failed in All Test Logs |
+|---|---:|---:|---:|---:|
+| Overall | 28 | 28 | 22 | 6 |
 
-- Total Test Cases Executed: 28
-- Total Test Cases Passed: 22
-- Total Test Cases Failed: 6
-
-| User Story ID | Total Test Cases | Executed | Passed | Failed |
+| User Story ID | Total Test Cases in Test Plan | Total Test Cases in Test Logs | Total Passed | Total Failed |
 |---|---:|---:|---:|---:|
 | CLP-001 | 13 | 15 | 12 | 3 |
 | CNS-001 | 15 | 13 | 10 | 3 |
 
 ## Consistency Analysis
 
-**Data Mapping Inconsistency Details:**
+**Data Mapping Inconsistency Details**
 
-| Test Case ID | Consistency Type | Description | User Story ID | AC ID | Impact Level |
-|---|---|---|---|---|---|
-| UT_CLP_014 | missing_testcase | Mapped testcase definition is missing for testcase ID: UT_CLP_014 | CLP-001 | AC5 | High |
-| UT_CLP_015 | missing_testcase | Mapped testcase definition is missing for testcase ID: UT_CLP_015 | CLP-001 | AC5 | High |
-| UT_CNS_014 | missing_testlog | Execution log is missing for testcase ID: UT_CNS_014 | CNS-001 | AC5 | Medium |
-| UT_CNS_015 | missing_testlog | Execution log is missing for testcase ID: UT_CNS_015 | CNS-001 | AC5 | Medium |
+| Testcase ID | Consistency Type | Description | Mapped User Story ID |
+|---|---|---|---|
+| UT_CLP_014 | missing_testcase | Mapped testcase definition is missing for testcase ID: UT_CLP_014 | CLP-001 |
+| UT_CLP_015 | missing_testcase | Mapped testcase definition is missing for testcase ID: UT_CLP_015 | CLP-001 |
+| UT_CNS_014 | missing_testlog | Execution log is missing for testcase ID: UT_CNS_014 | CNS-001 |
+| UT_CNS_015 | missing_testlog | Execution log is missing for testcase ID: UT_CNS_015 | CNS-001 |
 
-**Consistency Metrics Summary:**
+**Consistency Metrics Summary**
 
-| Metric | Count |
+| Metric | Value |
 |---|---|
-| Total Test Cases | 28 |
-| Total Test Logs | 28 |
-| Missing Test Cases | 2 |
-| Missing Test Logs | 2 |
+| Total Testcases | 28 |
+| Total Testlogs | 28 |
 | Consistency Status | Mismatch Detected |
+| Missing Testlogs | 2 |
+| Missing Testcases | 2 |
 
 ## Defect Details
 
-**Defect Rate:** 21.43%
+**Defect Rate:** 17.86%
 
-## Formula Analysis for Defect Rate
-
-**Metric Value:** 21.43%
+### Formula Analysis for Defect Rate
 
 **Formula:** `(total_defects_in_all_test_logs / total_test_cases_in_all_test_plan) × 100`
 
-**Description:** Defect Rate measures the proportion of defects identified during testing relative to the total number of test cases.
+**Calculation:** `(5 / 28) × 100 = 17.86`
 
-**Components:**
-
-- total_defects_in_all_test_logs: 6
-- total_test_cases_in_all_test_plan: 28
-- overall_defect_rate_calculation: `(6 / 28) × 100 = 21.43`
-
-| Defect ID | Test Case ID | User Story ID | Defect Description |
-|---|---|---|---|
-| DEF-CLP-001 | UT_CLP_003 | CLP-001 | Points posting service delay |
-| DEF-CLP-002 | UT_CLP_008 | CLP-001 | Balance refresh cache issue |
-| DEF-CLP-003 | UT_CLP_015 | CLP-001 | Redemption workflow synchronization issue |
-| DEF-CNS-001 | UT_CNS_004 | CNS-001 | SMS gateway timeout prevents delivery |
-| DEF-CNS-002 | UT_CNS_006 | CNS-001 | SMS tracking service failed to update status |
-| DEF-CNS-003 | UT_CNS_009 | CNS-001 | Push notification service unavailable |
+| Defect ID | Testcase ID | Defect Description | User Story ID | AC ID |
+|---|---|---|---|---|
+| DEF-CLP-001 | UT_CLP_003 | Points posting service delay | CLP-001 | AC1 |
+| DEF-CLP-002 | UT_CLP_008 | Balance refresh cache issue | CLP-001 | AC3 |
+| DEF-CNS-001 | UT_CNS_004 | SMS gateway timeout prevents delivery | CNS-001 | AC2 |
+| DEF-CNS-002 | UT_CNS_006 | SMS tracking service failed to update status | CNS-001 | AC2 |
+| DEF-CNS-003 | UT_CNS_009 | Push notification service unavailable | CNS-001 | AC3 |
 
 ## Conclusion
 
-Remediation is required as test case failures and defects exist in the current test suite. The report indicates outstanding coverage gaps and execution issues that must be addressed before progression.
+Remediation is required as test case failures and defects exist in the current test execution results.
