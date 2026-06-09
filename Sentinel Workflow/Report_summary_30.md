@@ -1,0 +1,98 @@
+<div align="center">
+
+# **UNIT TEST QUALITY & COVERAGE REPORT**
+
+</div>
+
+# Scope
+
+This report evaluates unit test coverage and quality across 1 user story.
+
+The scope is restricted to test plans and execution records mapped to these user stories. Analysis excludes non-unit test activities and unrelated defect categories. The user story ORM-001 forms the baseline for evaluation, and the scope is limited to unit test coverage and execution records mapped to this user story.
+
+# Coverage Gap Details
+
+| User Story ID | AC ID | Acceptance Criteria | Coverage Status |
+|---|---|---|---|
+| ORM-001 | AC1 | No testcase explicitly validates creation of refund requests for eligible orders. | Not Covered |
+| ORM-001 | AC2 | No testcase explicitly validates sending refund approval notifications to customers. | Not Covered |
+| ORM-001 | AC3 | No testcase explicitly validates refund status viewability by customers in the portal. | Not Covered |
+| ORM-001 | AC4 | No testcase explicitly validates capture of customer ID in refund audit logs. | Not Covered |
+| ORM-001 | AC4 | No testcase explicitly validates capture of refund amount in refund audit logs. | Not Covered |
+| ORM-001 | AC4 | No testcase explicitly validates capture of approval timestamp in refund audit logs. | Not Covered |
+| ORM-001 | AC5 | No testcase explicitly validates the $1000 threshold for high-value refunds. | Not Covered |
+| ORM-001 | AC5 | No testcase explicitly validates manager approval requirement for high-value refunds. | Not Covered |
+| ORM-001 | AC5 | No testcase explicitly validates fraud review requirement for high-value refunds. | Not Covered |
+
+# Test Execution Summary
+
+### Overall Test Execution Summary
+
+**Total Test Cases Executed:** 15
+
+**Total Test Cases Passed:** 12
+
+**Total Test Cases Failed:** 3
+
+## Test Execution Summary Details
+
+| User Story ID | Total Test Cases | Executed | Passed | Failed |
+|---|---:|---:|---:|---:|
+| ORM-001 | 0 | 0 | 0 | 0 |
+| CNS-001 | 15 | 0 | 0 | 0 |
+| CLP-001 | 0 | 15 | 12 | 3 |
+
+# Consistency Analysis
+
+### Data Mapping Inconsistency Details
+
+| Test Case ID | Consistency Type | Description | User Story ID | AC ID | Impact Level |
+|---|---|---|---|---|---|
+| UT_CNS_001 | missing_testlog | Execution log is missing for testcase ID: UT_CNS_001 | CNS-001 | AC1 | Medium |
+| UT_CNS_002 | missing_testlog | Execution log is missing for testcase ID: UT_CNS_002 | CNS-001 | AC1 | Medium |
+| UT_CNS_003 | missing_testlog | Execution log is missing for testcase ID: UT_CNS_003 | CNS-001 | AC1 | Medium |
+| UT_CNS_004 | missing_testlog | Execution log is missing for testcase ID: UT_CNS_004 | CNS-001 | AC2 | Medium |
+| UT_CNS_005 | missing_testlog | Execution log is missing for testcase ID: UT_CNS_005 | CNS-001 | AC2 | Medium |
+| UT_CNS_006 | missing_testlog | Execution log is missing for testcase ID: UT_CNS_006 | CNS-001 | AC2 | Medium |
+| UT_CNS_007 | missing_testlog | Execution log is missing for testcase ID: UT_CNS_007 | CNS-001 | AC3 | Medium |
+| UT_CNS_008 | missing_testlog | Execution log is missing for testcase ID: UT_CNS_008 | CNS-001 | AC3 | Medium |
+| UT_CNS_009 | missing_testlog | Execution log is missing for testcase ID: UT_CNS_009 | CNS-001 | AC3 | Medium |
+| UT_CNS_010 | missing_testlog | Execution log is missing for testcase ID: UT_CNS_010 | CNS-001 | AC4 | Medium |
+| UT_CNS_011 | missing_testlog | Execution log is missing for testcase ID: UT_CNS_011 | CNS-001 | AC4 | Medium |
+| UT_CNS_012 | missing_testlog | Execution log is missing for testcase ID: UT_CNS_012 | CNS-001 | AC4 | Medium |
+| UT_CNS_013 | missing_testlog | Execution log is missing for testcase ID: UT_CNS_013 | CNS-001 | AC5 | Medium |
+| UT_CNS_014 | missing_testlog | Execution log is missing for testcase ID: UT_CNS_014 | CNS-001 | AC5 | Medium |
+| UT_CNS_015 | missing_testlog | Execution log is missing for testcase ID: UT_CNS_015 | CNS-001 | AC5 | Medium |
+| UT_CLP_001 | missing_testcase | Mapped testcase definition is missing for testcase ID: UT_CLP_001 | CLP-001 | AC1 | High |
+| UT_CLP_002 | missing_testcase | Mapped testcase definition is missing for testcase ID: UT_CLP_002 | CLP-001 | AC1 | High |
+| UT_CLP_003 | missing_testcase | Mapped testcase definition is missing for testcase ID: UT_CLP_003 | CLP-001 | AC1 | High |
+| UT_CLP_004 | missing_testcase | Mapped testcase definition is missing for testcase ID: UT_CLP_004 | CLP-001 | AC2 | High |
+| UT_CLP_005 | missing_testcase | Mapped testcase definition is missing for testcase ID: UT_CLP_005 | CLP-001 | AC2 | High |
+| UT_CLP_006 | missing_testcase | Mapped testcase definition is missing for testcase ID: UT_CLP_006 | CLP-001 | AC2 | High |
+| UT_CLP_007 | missing_testcase | Mapped testcase definition is missing for testcase ID: UT_CLP_007 | CLP-001 | AC3 | High |
+| UT_CLP_008 | missing_testcase | Mapped testcase definition is missing for testcase ID: UT_CLP_008 | CLP-001 | AC3 | High |
+| UT_CLP_009 | missing_testcase | Mapped testcase definition is missing for testcase ID: UT_CLP_009 | CLP-001 | AC3 | High |
+| UT_CLP_010 | missing_testcase | Mapped testcase definition is missing for testcase ID: UT_CLP_010 | CLP-001 | AC4 | High |
+| UT_CLP_011 | missing_testcase | Mapped testcase definition is missing for testcase ID: UT_CLP_011 | CLP-001 | AC4 | High |
+| UT_CLP_012 | missing_testcase | Mapped testcase definition is missing for testcase ID: UT_CLP_012 | CLP-001 | AC4 | High |
+| UT_CLP_013 | missing_testcase | Mapped testcase definition is missing for testcase ID: UT_CLP_013 | CLP-001 | AC5 | High |
+| UT_CLP_014 | missing_testcase | Mapped testcase definition is missing for testcase ID: UT_CLP_014 | CLP-001 | AC5 | High |
+| UT_CLP_015 | missing_testcase | Mapped testcase definition is missing for testcase ID: UT_CLP_015 | CLP-001 | AC5 | High |
+
+### Consistency Metrics Summary
+
+| Metric | Count |
+|---|---|
+| Total Test Cases | 15 |
+| Total Test Logs | 15 |
+| Missing Test Cases | 15 |
+| Missing Test Logs | 15 |
+| Consistency Status | Mismatch Detected |
+
+# Defect Details
+
+No defect details are available for the analyzed user story ORM-001 as no test cases are mapped to this user story.
+
+# Conclusion
+
+Remediation is required as user story ORM-001 is Not Covered and test case failures exist in the execution logs. The report indicates outstanding coverage and execution issues that must be addressed before progression.
