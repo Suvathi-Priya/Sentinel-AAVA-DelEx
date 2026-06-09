@@ -2,81 +2,170 @@
 
 ## Scope
 
-This report evaluates unit test coverage and quality across 2 user stories. The scope is restricted to test plans and execution records mapped to these user stories. Analysis excludes non-unit test activities and unrelated defect categories.
+This report evaluates unit test coverage and quality across 5 user stories. The scope is restricted to test plans and execution records mapped to these user stories. Analysis excludes non-unit test activities and unrelated defect categories.
 
-**Total User Stories:** 2
+**Coverage Boundary:** The total number of user stories included in the analysis is 5, forming the baseline for evaluation. The scope is limited to unit test coverage and execution records mapped to these user stories.
 
-The 2 user stories form the baseline for evaluation. The scope is limited to unit test coverage and execution records mapped to these user stories.
+**Inclusions:** Unit test cases linked to the identified user stories, test execution results (executed, not executed, passed, failed), and defect data directly associated with these user stories.
 
-**Inclusions:**
-- Unit test cases linked to the identified user stories
-- Test execution results (executed, passed, failed)
-- Defect data directly associated with these user stories
-
-**Exclusions:**
-- Integration tests, system tests, or performance tests
-- User stories not mapped to test cases
+**Exclusions:** Integration tests, system tests, performance tests, and user stories not mapped to test cases.
 
 ## Test Coverage Summary
+
+**Total User Stories:** 5
+
+### Coverage Details
+
+| Metric | Count | Description |
+|--------|-------|-------------|
+| Fully Covered | 0 | User stories where all acceptance criteria are Fully Covered |
+| Partially Covered | 5 | User stories containing one or more Partially Covered acceptance criteria |
+| Not Covered | 0 | User stories where all acceptance criteria are Not Covered |
 
 ### Coverage Gap Details
 
 | User Story ID | AC ID | Coverage Gap Reason | Coverage Status |
-|---|---|---|---|
-| PGI-001 | AC1 | No testcase explicitly validates available balance check. | Partially Covered |
-| PGI-001 | AC1 | No testcase explicitly validates merchant authorization. | Partially Covered |
-| PGI-001 | AC2 | No testcase explicitly validates that amount is present in email confirmation. | Partially Covered |
-| PGI-001 | AC2 | No testcase explicitly validates that date is present in email confirmation. | Partially Covered |
-| PGI-001 | AC2 | No testcase explicitly validates that merchant name is present in email confirmation. | Partially Covered |
-| PGI-001 | AC2 | No testcase explicitly validates the 2 minute time threshold for email delivery. | Partially Covered |
-| PGI-001 | AC3 | No testcase explicitly validates that payment transactions are logged. | Partially Covered |
-| PGI-001 | AC4 | No testcase explicitly validates exponential backoff retry strategy. | Partially Covered |
-| PGI-001 | AC5 | No testcase explicitly validates the 5 business day processing time threshold. | Partially Covered |
-| OMS-001 | AC2 | No testcase explicitly validates order status transition to Cancelled. | Partially Covered |
-| OMS-001 | AC4 | No testcase explicitly validates that order events are logged. | Partially Covered |
+|---------------|-------|-------------------|-----------------|
+| SCM-002 | AC2 | No testcase explicitly validates that resume date is included in pause confirmation notification | Partially Covered |
+| SCM-002 | AC3 | No testcase explicitly validates that customers can view scheduled resume date in the customer portal | Partially Covered |
+| SCM-002 | AC4 | No testcase explicitly validates that pause start date is captured in pause audit logs | Partially Covered |
+| SCM-002 | AC4 | No testcase explicitly validates that timestamp is captured in pause audit logs | Partially Covered |
+| SCM-002 | AC5 | No testcase explicitly validates that manager approval is required before the pause is activated | Partially Covered |
+| ORM-001 | AC4 | No testcase explicitly validates that approval timestamp is captured in refund audit logs | Partially Covered |
+| ORM-001 | AC5 | No testcase explicitly validates the $1000 threshold for high-value refunds | Partially Covered |
+| CLP-001 | AC5 | No testcase explicitly validates that fraud review is required for reward redemptions above 5000 points | Partially Covered |
+| SCM-003 | AC2 | No testcase explicitly validates that revised billing amount is included in upgrade confirmation notification | Partially Covered |
+| SCM-003 | AC4 | No testcase explicitly validates that subscription ID is captured in upgrade audit logs | Partially Covered |
+| SCM-003 | AC4 | No testcase explicitly validates that upgrade date is captured in upgrade audit logs | Partially Covered |
+| SCM-003 | AC5 | No testcase explicitly validates that manager approval is required before the upgrade is activated | Partially Covered |
+| CNS-001 | AC4 | No testcase explicitly validates that timestamp is captured in notification logs | Partially Covered |
+| CNS-001 | AC5 | No testcase explicitly validates that retry attempts are limited to 3 times | Partially Covered |
 
 ### Coverage Score
 
-| User Story ID | Coverage Score | Color Indicator |
-|---|---:|---|
-| PGI-001 | 0.00% | 🔴 Red |
-| OMS-001 | 60.00% | 🔴 Red |
+| User Story ID | Coverage Score | Color |
+|---------------|----------------|-------|
+| SCM-002 | 20.00% | 🔴 Red |
+| ORM-001 | 60.00% | 🔴 Red |
+| CLP-001 | 80.00% | 🟠 Amber |
+| SCM-003 | 40.00% | 🔴 Red |
+| CNS-001 | 60.00% | 🔴 Red |
+
+### Legend
+
+| Color | Coverage Range | Interpretation |
+|-------|----------------|----------------|
+| 🟢 Green | 90–100% | High coverage (meets quality expectations) |
+| 🟠 Amber | 70–89% | Moderate coverage (requires attention) |
+| 🔴 Red | <70% | Low coverage (critical gaps present) |
+
+### Formula Analysis for Coverage Score
+
+#### Formula
+
+```text
+Coverage Score (%) = (Fully Covered Acceptance Criteria for the User Story / Total Acceptance Criteria in the User Story) × 100
+```
+
+#### Description
+
+Coverage Score measures the extent to which the acceptance criteria of an individual user story are validated by corresponding test cases. It indicates how completely the requirements defined within that user story are covered through testing.
+
+#### Components
+
+| Component | Description |
+|-----------|-------------|
+| Covered Acceptance Criteria for the User Story | Number of acceptance criteria within the user story that have at least one mapped test case |
+| Total Acceptance Criteria in the User Story | Total number of acceptance criteria defined for that specific user story |
+
+#### Calculation Scope
+
+Coverage Score must be calculated separately for each user story using only the acceptance criteria belonging to that user story.
 
 ## Test Execution Summary
 
+### Overall Test Execution Summary
+
+- **Total Test Cases Executed:** 73
+- **Total Test Cases Passed:** 58
+- **Total Test Cases Failed:** 15
+
+### Test Execution Summary Details
+
 | User Story ID | Total Test Cases | Executed | Passed | Failed |
-|---|---:|---:|---:|---:|
-| PGI-001 | 15 | 15 | 11 | 4 |
-| OMS-001 | 15 | 15 | 11 | 4 |
+|---------------|------------------|----------|--------|--------|
+| SCM-002 | 15 | 15 | 13 | 2 |
+| ORM-001 | 15 | 15 | 12 | 3 |
+| CLP-001 | 13 | 15 | 12 | 3 |
+| SCM-003 | 15 | 15 | 13 | 2 |
+| CNS-001 | 15 | 13 | 8 | 3 |
 
 ## Consistency Analysis
 
 ### Data Mapping Inconsistency Details
 
-No inconsistency details provided.
+| Test Case ID | Consistency Type | Description | User Story ID | AC ID | Impact Level |
+|--------------|------------------|-------------|---------------|-------|--------------|
+| UT_CLP_014 | missing_testcase | Mapped testcase definition is missing for testcase ID: UT_CLP_014 | CLP-001 | AC5 | High |
+| UT_CLP_015 | missing_testcase | Mapped testcase definition is missing for testcase ID: UT_CLP_015 | CLP-001 | AC5 | High |
+| UT_CNS_014 | missing_testlog | Execution log is missing for testcase ID: UT_CNS_014 | CNS-001 | AC5 | Medium |
+| UT_CNS_015 | missing_testlog | Execution log is missing for testcase ID: UT_CNS_015 | CNS-001 | AC5 | Medium |
 
 ### Consistency Metrics Summary
 
 | Metric | Count |
-|---|---|
-| Total Test Cases | 30 |
-| Total Test Logs | 30 |
-| Missing Test Cases | 0 |
-| Missing Test Logs | 0 |
-| Consistency Status | Consistent |
+|--------|-------|
+| Total Test Cases | 73 |
+| Total Test Logs | 73 |
+| Missing Test Cases | 2 |
+| Missing Test Logs | 2 |
+| Consistency Status | Mismatch Detected |
 
 ## Defect Details
 
+**Defect Rate:** 20.55%
+
+### Defect Rate
+
+20.55%
+
+### Formula Analysis for Defect Rate
+
+#### Formula
+
+```text
+Defect Rate = (Total Defects / Total Test Cases) × 100
+```
+
+#### Description
+
+Defect Rate measures the proportion of defects identified during testing relative to the total number of test cases executed. It is a key quality metric used to evaluate system stability and testing effectiveness.
+
+#### Components
+
+| Component | Description |
+|-----------|-------------|
+| Total Defects | Total number of defects identified during the test cycle |
+| Total Test Cases | Total number of test cases executed |
+
+### Defect Details
+
 | Defect ID | Test Case ID | User Story ID | Defect Description |
-|---|---|---|---|
-| DEF-PGI-001 | UT_PGI_003 | PGI-001 | Payment processing response exceeds 10 second SLA under concurrent load |
-| DEF-PGI-002 | UT_PGI_005 | PGI-001 | Email confirmation template missing merchant name field |
-| DEF-PGI-003 | UT_PGI_012 | PGI-001 | Alert notification service failed to dispatch operations team alert on final retry exhaustion |
-| DEF-PGI-004 | UT_PGI_015 | PGI-001 | Refund status notification service did not trigger customer email on status change |
-| DEF-OMS-001 | UT_OMS_003 | OMS-001 | Order confirmation service response exceeds 30 second SLA during concurrent order submissions |
-| DEF-OMS-002 | UT_OMS_006 | OMS-001 | Notification event not fired for Dispatched status transition in order lifecycle service |
-| DEF-OMS-003 | UT_OMS_014 | OMS-001 | Agent routing service failed to assign late cancellation request to customer service queue |
+|-----------|--------------|---------------|-------------------|
+| DEF-SCM-101 | TP_SCM_012 | SCM-002 | Pause reason not captured consistently |
+| DEF-SCM-102 | TP_SCM_015 | SCM-002 | Activation allowed without completed approval |
+| DEF-ORM-001 | UT_ORM_005 | ORM-001 | Notification template rendering issue |
+| DEF-ORM-002 | UT_ORM_009 | ORM-001 | Status history service timeout |
+| DEF-ORM-003 | UT_ORM_015 | ORM-001 | Refund workflow synchronization error |
+| DEF-CLP-001 | UT_CLP_003 | CLP-001 | Points posting service delay |
+| DEF-CLP-002 | UT_CLP_008 | CLP-001 | Balance refresh cache issue |
+| DEF-CLP-003 | UT_CLP_015 | CLP-001 | Redemption workflow synchronization issue |
+| DEF-SCM3-101 | TP_SCM3_005 | SCM-003 | Revised billing amount not included in upgrade confirmation notification |
+| DEF-SCM3-102 | TP_SCM3_014 | SCM-003 | Manager approval workflow not initiated when price increase equals exactly 50% |
+| DEF-CNS-001 | UT_CNS_004 | CNS-001 | SMS gateway timeout prevents delivery |
+| DEF-CNS-002 | UT_CNS_006 | CNS-001 | SMS tracking service failed to update status |
+| DEF-CNS-003 | UT_CNS_009 | CNS-001 | Push notification service unavailable |
 
 ## Conclusion
 
-Remediation is required as test case failures and defects exist in the unit test suite. The report indicates outstanding coverage and execution issues that must be addressed before progression.
+Remediation is required as test cases have failed and defects exist across all user stories. The report indicates outstanding coverage gaps and execution issues that must be addressed before progression.
