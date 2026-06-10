@@ -1,24 +1,20 @@
-<div align="center">
+# UNIT TEST QUALITY & COVERAGE REPORT
 
-# **UNIT TEST QUALITY & COVERAGE REPORT**
+## Scope
 
-</div>
+This report evaluates unit test coverage and quality across 2 user stories. The scope is restricted to test plans and execution records mapped to these user stories.
 
-# Scope
+Analysis excludes non-unit test activities and unrelated defect categories.
 
-This report evaluates unit test coverage and quality across 2 user stories.
-
-The scope is restricted to test plans and execution records mapped to these user stories. Analysis excludes non-unit test activities and unrelated defect categories. The user stories form the baseline for evaluation, and the scope is limited to unit test coverage and execution records mapped to these user stories.
-
-# Coverage Gap Details
+## Coverage Gap Details
 
 | User Story ID | AC ID | Coverage Gap Reason | Coverage Status |
 |---|---|---|---|
 | CLP-001 | AC5 | No testcase explicitly validates fraud review requirement. | Partially Covered |
-| CNS-001 | AC4 | No testcase explicitly validates timestamp capture in notification logs. | Partially Covered |
+| CNS-001 | AC4 | No testcase explicitly validates timestamp capture. | Partially Covered |
 | CNS-001 | AC5 | No testcase explicitly validates the retry limit of 3 times. | Partially Covered |
 
-# Test Execution Summary
+## Test Execution Summary
 
 **Total Test Cases Executed:** 28
 
@@ -26,25 +22,25 @@ The scope is restricted to test plans and execution records mapped to these user
 
 **Total Test Cases Failed:** 7
 
-# Overall Test Execution Summary Details
+## Overall Test Execution Summary Details
 
 | User Story ID | Total Test Cases | Executed | Passed | Failed |
-|---|---|---|---|---|
+|---|---:|---:|---:|---:|
 | CLP-001 | 13 | 15 | 12 | 3 |
 | CNS-001 | 15 | 13 | 9 | 4 |
 
-# Consistency Analysis
+## Consistency Analysis
 
-### Data Mapping Inconsistency Details:
+### Data Mapping Inconsistency Details
 
 | Test Case ID | Consistency Type | Description | User Story ID | AC ID | Impact Level |
 |---|---|---|---|---|---|
-| UT_CLP_014 | missing_testcase | Mapped testcase definition is missing for testcase ID: UT_CLP_014 | CLP-001 | AC5 | High |
-| UT_CLP_015 | missing_testcase | Mapped testcase definition is missing for testcase ID: UT_CLP_015 | CLP-001 | AC5 | High |
-| UT_CNS_014 | missing_testlog | Execution log is missing for testcase ID: UT_CNS_014 | CNS-001 | AC5 | Medium |
-| UT_CNS_015 | missing_testlog | Execution log is missing for testcase ID: UT_CNS_015 | CNS-001 | AC5 | Medium |
+| UT_CLP_014 | missing_testcase | Mapped testcase definition is missing for testcase ID: UT_CLP_014 | CLP-001 | NULL | High |
+| UT_CLP_015 | missing_testcase | Mapped testcase definition is missing for testcase ID: UT_CLP_015 | CLP-001 | NULL | High |
+| UT_CNS_014 | missing_testlog | Execution log is missing for testcase ID: UT_CNS_014 | CNS-001 | NULL | Medium |
+| UT_CNS_015 | missing_testlog | Execution log is missing for testcase ID: UT_CNS_015 | CNS-001 | NULL | Medium |
 
-# Consistency Metrics Summary
+### Consistency Metrics Summary
 
 | Metric | Count |
 |---|---|
@@ -54,7 +50,7 @@ The scope is restricted to test plans and execution records mapped to these user
 | Missing Test Logs | 2 |
 | Consistency Status | Mismatch Detected |
 
-# Defect Details
+## Defect Details
 
 | Defect ID | Test Case ID | User Story ID | Defect Description |
 |---|---|---|---|
@@ -65,6 +61,6 @@ The scope is restricted to test plans and execution records mapped to these user
 | DEF-CNS-002 | UT_CNS_006 | CNS-001 | SMS tracking service failed to update status |
 | DEF-CNS-003 | UT_CNS_009 | CNS-001 | Push notification service unavailable |
 
-# Conclusion
+## Conclusion
 
-Remediation is required as test cases have failed and defects exist in the unit test suite.
+Remediation is required as coverage gaps exist in user stories CLP-001 and CNS-001, test case failures are present, and defects have been identified. The unit test suite requires addressing coverage gaps and resolving execution issues before progression.
