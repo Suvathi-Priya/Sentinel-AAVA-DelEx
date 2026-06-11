@@ -2,31 +2,24 @@
 
 ## Scope
 
-This report evaluates unit test coverage and quality across 5 user stories. The scope is restricted to test plans and execution records mapped to these user stories. Analysis excludes non-unit test activities and unrelated defect categories.
+This report evaluates unit test coverage and quality across 6 user stories. The scope is restricted to test plans and execution records mapped to these user stories.
 
-The baseline for evaluation consists of 75 unit test cases distributed across the following user stories:
-- SCM-001: Implement Order Refund Management Service (15 test cases)
-- SCM-002: Subscription Pause Management Service (15 test cases)
-- SCM-003: Subscription Upgrade Request Processing (15 test cases)
-- SCM-004: Subscription Cancellation Workflow (15 test cases)
-- SCM-006: Subscription Downgrade Management (15 test cases)
+Analysis excludes non-unit test activities and unrelated defect categories.
 
 ## Coverage Gap Details
 
 | User Story ID | AC ID | Coverage Gap Reason | Coverage Status |
 |---------------|-------|---------------------|-----------------|
-| SCM-002 | AC2 | No testcase explicitly validates that resume date is included in pause confirmation notification. | Partially Covered |
-| SCM-002 | AC3 | No testcase explicitly validates that scheduled resume date is viewable in customer portal. | Partially Covered |
-| SCM-002 | AC4 | No testcase explicitly validates that pause start date is captured in audit log. | Partially Covered |
-| SCM-002 | AC5 | No testcase explicitly validates that manager approval is required before pause activation. | Partially Covered |
-| SCM-003 | AC1 | No testcase explicitly validates that target plan is specified in upgrade request. | Partially Covered |
-| SCM-003 | AC3 | No testcase explicitly validates that next billing cycle changes are viewable in customer portal. | Partially Covered |
-| SCM-003 | AC5 | No testcase explicitly validates that manager approval is required before upgrade activation. | Partially Covered |
-| SCM-004 | AC1 | No testcase explicitly validates that cancellation reason is specified in cancellation request. | Partially Covered |
-| SCM-004 | AC5 | No testcase explicitly validates that finance team approval is required before cancellation processing. | Partially Covered |
-| SCM-006 | AC1 | No testcase explicitly validates that target lower plan is selected in downgrade request. | Partially Covered |
-| SCM-006 | AC4 | No testcase explicitly validates that previous plan is captured in audit log.; No testcase explicitly validates that downgraded plan is captured in audit log.; No testcase explicitly validates that effective date is captured in audit log.; No testcase explicitly validates that credit issued is captured in audit log.; No testcase explicitly validates that timestamp is captured in audit log. | Partially Covered |
-| SCM-006 | AC5 | No testcase explicitly validates that customer retention review is required for enterprise-tier plan downgrades.; No testcase explicitly validates that both account manager approval and customer retention review are required before downgrade processing. | Partially Covered |
+| SCM-002 | AC2 | No testcase explicitly validates resume date inclusion in pause confirmation notification. | Partially Covered |
+| SCM-002 | AC3 | No testcase explicitly validates scheduled resume date viewing in customer portal. | Partially Covered |
+| SCM-002 | AC4 | No testcase explicitly validates pause start date capture in audit log. | Partially Covered |
+| SCM-003 | AC3 | No testcase explicitly validates next billing cycle changes viewing in customer portal. | Partially Covered |
+| SCM-003 | AC4 | No testcase explicitly validates customer ID capture in upgrade audit log.; No testcase explicitly validates subscription ID capture in upgrade audit log.; No testcase explicitly validates previous plan capture in upgrade audit log.; No testcase explicitly validates new plan capture in upgrade audit log.; No testcase explicitly validates upgrade date capture in upgrade audit log.; No testcase explicitly validates timestamp capture in upgrade audit log. | Not Covered |
+| SCM-003 | AC5 | No testcase explicitly validates upgrade requests with price increase greater than 50%.; No testcase explicitly validates manager approval requirement before upgrade activation for price increase greater than 50%. | Not Covered |
+| SCM-004 | AC4 | No testcase explicitly validates customer ID capture in cancellation audit log.; No testcase explicitly validates subscription ID capture in cancellation audit log.; No testcase explicitly validates cancellation reason capture in cancellation audit log.; No testcase explicitly validates effective date capture in cancellation audit log.; No testcase explicitly validates refund amount capture in cancellation audit log.; No testcase explicitly validates timestamp capture in cancellation audit log. | Not Covered |
+| SCM-004 | AC5 | No testcase explicitly validates cancellation requests with outstanding balances greater than $500.; No testcase explicitly validates finance team approval requirement before cancellation processing for outstanding balances greater than $500. | Not Covered |
+| SCM-006 | AC4 | No testcase explicitly validates customer ID capture in downgrade audit log.; No testcase explicitly validates subscription ID capture in downgrade audit log.; No testcase explicitly validates previous plan capture in downgrade audit log.; No testcase explicitly validates downgraded plan capture in downgrade audit log.; No testcase explicitly validates effective date capture in downgrade audit log.; No testcase explicitly validates credit issued capture in downgrade audit log.; No testcase explicitly validates timestamp capture in downgrade audit log. | Not Covered |
+| SCM-006 | AC5 | No testcase explicitly validates customer retention review requirement before processing enterprise-tier downgrades. | Partially Covered |
 
 ## Consistency Analysis
 
@@ -34,17 +27,17 @@ The baseline for evaluation consists of 75 unit test cases distributed across th
 
 | Test Case ID | Consistency Type | Description | User Story ID | AC ID | Impact Level |
 |---------------|------------------|-------------|----------------|-------|---------------|
-| TP_SCM3_014 | missing_testlog | Execution log is missing for testcase ID: TP_SCM3_014 | SCM-003 | AC1 | Medium |
-| TP_SCM3_015 | missing_testlog | Execution log is missing for testcase ID: TP_SCM3_015 | SCM-003 | AC5 | Medium |
-| TP_SCM4_014 | missing_testlog | Execution log is missing for testcase ID: TP_SCM4_014 | SCM-004 | AC2 | Medium |
-| TP_SCM4_015 | missing_testlog | Execution log is missing for testcase ID: TP_SCM4_015 | SCM-004 | AC5 | Medium |
+| TP_SCM3_014 | missing_testlog | Execution log is missing for testcase ID: TP_SCM3_014 | SCM-003 | NULL | Medium |
+| TP_SCM3_015 | missing_testlog | Execution log is missing for testcase ID: TP_SCM3_015 | SCM-003 | NULL | Medium |
+| TP_SCM4_014 | missing_testlog | Execution log is missing for testcase ID: TP_SCM4_014 | SCM-004 | NULL | Medium |
+| TP_SCM4_015 | missing_testlog | Execution log is missing for testcase ID: TP_SCM4_015 | SCM-004 | NULL | Medium |
 
 ### Consistency Metrics Summary
 
 | Metric | Count |
 |---------|-------|
-| Total Test Cases | 75 |
-| Total Test Logs | 71 |
+| Total Test Cases | 90 |
+| Total Test Logs | 86 |
 | Missing Test Cases | 0 |
 | Missing Test Logs | 4 |
 | Consistency Status | Mismatch Detected |
@@ -61,10 +54,14 @@ The baseline for evaluation consists of 75 unit test cases distributed across th
 | DEF-SCM3-102 | TP_SCM3_009 | SCM-003 | Manager approval workflow not initiated when price increase equals exactly 50% |
 | DEF-SCM4-101 | TP_SCM4_004 | SCM-004 | Applicable refund details not included in cancellation confirmation notification |
 | DEF-SCM4-102 | TP_SCM4_009 | SCM-004 | Finance team approval workflow fails for mixed currency outstanding balances |
+| DEF-SCM5-101 | TP_SCM5_005 | SCM-005 | Renewal amount not populated in 30-day reminder notification for monthly billing plans |
+| DEF-SCM5-103 | TP_SCM5_011 | SCM-005 | System sends reminder even when subscription expiry date is null |
+| DEF-SCM5-104 | TP_SCM5_013 | SCM-005 | Boundary condition error: $10,000 subscription flagged as high-value instead of requiring value >$10,000 |
+| DEF-SCM5-105 | TP_SCM5_015 | SCM-005 | Reminder log delivery status remains blank when notification channel fails |
 | DEF-SCM6-101 | TP_SCM6_005 | SCM-006 | Adjusted billing amount not included in downgrade confirmation notification to customer |
 | DEF-SCM6-102 | TP_SCM6_012 | SCM-006 | Audit log not created when downgrade results in zero credit amount |
 | DEF-SCM6-103 | TP_SCM6_015 | SCM-006 | Enterprise downgrade not held pending state; processed immediately bypassing approval workflow |
 
 ## Conclusion
 
-Remediation is required as multiple user stories have partial coverage gaps and 11 defects exist across the test execution results.
+Remediation is required as multiple user stories have coverage gaps and 17 defects exist across the test execution results.
