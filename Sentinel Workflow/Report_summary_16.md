@@ -2,168 +2,71 @@
 
 ## Scope
 
-This report evaluates unit test coverage and quality across 5 user stories. The scope is restricted to test plans and execution records mapped to these user stories.
+This report evaluates unit test coverage and quality across 6 user stories. The scope is restricted to test plans and execution records mapped to these user stories.
 
-Analysis excludes non-unit test activities and unrelated defect categories. These user stories form the baseline for evaluation, and the scope is limited to unit test coverage and execution records mapped to these user stories.
-
-## Test Coverage Summary
-
-**Total User Stories:** 5
-
-## Coverage Details
-
-| Metric | Count | Description |
-|---|---:|---|
-| Fully Covered | 0 | User stories where all acceptance criteria are Fully Covered |
-| Partially Covered | 5 | User stories containing one or more Partially Covered acceptance criteria |
-| Not Covered | 0 | User stories where all acceptance criteria are Not Covered |
+Analysis excludes non-unit test activities and unrelated defect categories. The 6 user stories form the baseline reference for measuring coverage, execution success, and defect quality.
 
 ## Coverage Gap Details
 
-| User Story ID | AC ID | Acceptance Criteria | Coverage Status |
+| User Story ID | AC ID | Coverage Gap Reason | Coverage Status |
 |---|---|---|---|
-| SCM-002 | AC2 | No testcase explicitly validates resume date inclusion in notification. | Partially Covered |
-| SCM-002 | AC3 | No testcase explicitly validates scheduled resume date visibility in the customer portal. | Partially Covered |
-| SCM-002 | AC4 | No testcase explicitly validates pause start date capture in audit log. | Partially Covered |
-| SCM-002 | AC4 | No testcase explicitly validates timestamp capture in audit log. | Partially Covered |
-| SCM-002 | AC5 | No testcase explicitly validates that pause activation occurs only after manager approval. | Partially Covered |
-| ORM-001 | AC4 | No testcase explicitly validates approval timestamp capture in audit log. | Partially Covered |
-| ORM-001 | AC5 | No testcase explicitly validates the $1000 threshold for high-value refunds. | Partially Covered |
-| CLP-001 | AC5 | No testcase explicitly validates fraud review requirement for high-value redemptions. | Partially Covered |
-| SCM-003 | AC2 | No testcase explicitly validates revised billing amount inclusion in notification. | Partially Covered |
-| SCM-003 | AC4 | No testcase explicitly validates subscription ID capture in upgrade audit log. | Partially Covered |
-| SCM-003 | AC4 | No testcase explicitly validates upgrade date capture in audit log. | Partially Covered |
-| SCM-003 | AC5 | No testcase explicitly validates that upgrade activation occurs only after manager approval. | Partially Covered |
-| CNS-001 | AC4 | No testcase explicitly validates timestamp capture in notification logs. | Partially Covered |
-| CNS-001 | AC5 | No testcase explicitly validates the retry limit of 3 times. | Partially Covered |
-
-## Coverage Score
-
-| User Story ID | Coverage Score | Color |
-|---|---:|---|
-| SCM-002 | 20.0 | 🔴 Red |
-| ORM-001 | 60.0 | 🟠 Amber |
-| CLP-001 | 80.0 | 🟠 Amber |
-| SCM-003 | 40.0 | 🔴 Red |
-| CNS-001 | 60.0 | 🟠 Amber |
-
-## Legend
-
-| Color | Coverage Range | Interpretation |
-|---|---|---|
-| 🟢 Green | 90–100% | High coverage (meets quality expectations) |
-| 🟠 Amber | 70–89% | Moderate coverage (requires attention) |
-| 🔴 Red | <70% | Low coverage (critical gaps present) |
-
-## Formula Analysis for Coverage Score
-
-#### Formula
-
-```text
-Coverage Score (%) = (Fully Covered Acceptance Criteria for the User Story / Total Acceptance Criteria in the User Story) × 100
-```
-
-#### Description
-
-Coverage Score measures the extent to which the acceptance criteria of an individual user story are validated by corresponding test cases. It indicates how completely the requirements defined within that user story are covered through testing.
-
-#### Components
-
-| Component | Description |
-|---|---|
-| Covered Acceptance Criteria for the User Story | Number of acceptance criteria within the user story that have at least one mapped test case |
-| Total Acceptance Criteria in the User Story | Total number of acceptance criteria defined for that specific user story |
-
-#### Calculation Scope:
-
-Coverage Score must be calculated separately for each user story using only the acceptance criteria belonging to that user story. Acceptance criteria from other user stories must not be included in the calculation.
-
-## Test Execution Summary
-
-## Overall Test Execution Summary
-
-**Total Test Cases Executed:** 73
-
-**Total Test Cases Passed:** 58
-
-**Total Test Cases Failed:** 15
-
-## Test Execution Summary Details
-
-| User Story ID | Total Test Cases | Executed | Passed | Failed |
-|---|---:|---:|---:|---:|
-| SCM-002 | 15 | 15 | 13 | 2 |
-| ORM-001 | 15 | 15 | 12 | 3 |
-| CLP-001 | 13 | 15 | 12 | 3 |
-| SCM-003 | 15 | 15 | 13 | 2 |
-| CNS-001 | 15 | 13 | 10 | 3 |
+| SCM-001 | AC5 | No testcase explicitly validates the $1000 threshold condition. | Partially Covered |
+| SCM-002 | AC2 | No testcase explicitly validates that resume date is included in the pause confirmation notification. | Partially Covered |
+| SCM-002 | AC3 | No testcase explicitly validates that scheduled resume date is viewable in the customer portal. | Partially Covered |
+| SCM-002 | AC4 | No testcase explicitly validates that pause start date is captured in the audit log. | Partially Covered |
+| SCM-002 | AC5 | No testcase explicitly validates the 90-day threshold condition. | Partially Covered |
+| SCM-003 | AC1 | No testcase explicitly validates that target plan is specified in the upgrade request. | Partially Covered |
+| SCM-003 | AC3 | No testcase explicitly validates that next billing cycle changes are viewable in the customer portal. | Partially Covered |
+| SCM-003 | AC5 | No testcase explicitly validates the 50% price increase threshold condition. | Partially Covered |
+| SCM-004 | AC1 | No testcase explicitly validates that cancellation reason is specified in the cancellation request. | Partially Covered |
+| SCM-004 | AC5 | No testcase explicitly validates the $500 outstanding balance threshold condition. | Partially Covered |
+| SCM-005 | AC4 | No testcase explicitly validates that reminder date is captured in the renewal reminder log.; No testcase explicitly validates that channel used is captured in the renewal reminder log. | Partially Covered |
+| SCM-005 | AC5 | No testcase explicitly validates the $10,000 annual value threshold condition. | Partially Covered |
+| SCM-006 | AC1 | No testcase explicitly validates that target lower plan is selected in the downgrade request. | Partially Covered |
+| SCM-006 | AC4 | No testcase explicitly validates that previous plan is captured in the downgrade audit log.; No testcase explicitly validates that downgraded plan is captured in the downgrade audit log.; No testcase explicitly validates that effective date is captured in the downgrade audit log.; No testcase explicitly validates that credit issued is captured in the downgrade audit log.; No testcase explicitly validates that timestamp is captured in the downgrade audit log. | Partially Covered |
+| SCM-006 | AC5 | No testcase explicitly validates that customer retention review is required before processing enterprise-tier downgrades. | Partially Covered |
 
 ## Consistency Analysis
 
-## Data Mapping Inconsistency Details
+### Data Mapping Inconsistency Details
 
 | Test Case ID | Consistency Type | Description | User Story ID | AC ID | Impact Level |
 |---|---|---|---|---|---|
-| UT_CLP_014 | missing_testcase | Mapped testcase definition is missing for testcase ID: UT_CLP_014 | CLP-001 | AC5 | High |
-| UT_CLP_015 | missing_testcase | Mapped testcase definition is missing for testcase ID: UT_CLP_015 | CLP-001 | AC5 | High |
-| UT_CNS_014 | missing_testlog | Execution log is missing for testcase ID: UT_CNS_014 | CNS-001 | AC5 | Medium |
-| UT_CNS_015 | missing_testlog | Execution log is missing for testcase ID: UT_CNS_015 | CNS-001 | AC5 | Medium |
+| TP_SCM3_014 | missing_testlog | Execution log is missing for testcase ID: TP_SCM3_014 | SCM-003 | AC1 | Medium |
+| TP_SCM3_015 | missing_testlog | Execution log is missing for testcase ID: TP_SCM3_015 | SCM-003 | AC5 | Medium |
+| TP_SCM4_014 | missing_testlog | Execution log is missing for testcase ID: TP_SCM4_014 | SCM-004 | AC2 | Medium |
+| TP_SCM4_015 | missing_testlog | Execution log is missing for testcase ID: TP_SCM4_015 | SCM-004 | AC5 | Medium |
 
-## Consistency Metrics Summary
+### Consistency Metrics Summary
 
 | Metric | Count |
 |---|---|
-| Total Test Cases | 73 |
-| Total Test Logs | 73 |
-| Missing Test Cases | 2 |
-| Missing Test Logs | 2 |
+| Total Test Cases | 90 |
+| Total Test Logs | 86 |
+| Missing Test Cases | 0 |
+| Missing Test Logs | 4 |
 | Consistency Status | Mismatch Detected |
-
-## Defect Details
-
-**Defect Rate:** 16.44%
-
-## Defect Rate
-
-16.44%
-
-## Formula Analysis for Defect Rate
-
-#### Formula
-
-```text
-Defect Rate = (Total Defects / Total Test Cases) × 100
-```
-
-#### Description
-
-Defect Rate measures the proportion of defects identified during testing relative to the total number of test cases executed. It is a key quality metric used to evaluate system stability and testing effectiveness.
-
-#### Components
-
-| Component | Description |
-|---|---|
-| Total Defects | Total number of defects identified during the test cycle |
-| Total Test Cases | Total number of test cases executed |
 
 ## Defect Details
 
 | Defect ID | Test Case ID | User Story ID | Defect Description |
 |---|---|---|---|
-| DEF-SCM-101 | TP_SCM_012 | SCM-002 | Pause reason not captured consistently |
-| DEF-SCM-102 | TP_SCM_015 | SCM-002 | Activation allowed without completed approval |
-| DEF-ORM-001 | UT_ORM_005 | ORM-001 | Notification template rendering issue |
-| DEF-ORM-002 | UT_ORM_009 | ORM-001 | Status history service timeout |
-| DEF-ORM-003 | UT_ORM_015 | ORM-001 | Refund workflow synchronization error |
-| DEF-CLP-001 | UT_CLP_003 | CLP-001 | Points posting service delay |
-| DEF-CLP-002 | UT_CLP_008 | CLP-001 | Balance refresh cache issue |
-| DEF-CLP-003 | UT_CLP_015 | CLP-001 | Redemption workflow synchronization issue |
-| DEF-SCM3-101 | TP_SCM3_005 | SCM-003 | Revised billing amount not included in upgrade confirmation notification |
-| DEF-SCM3-102 | TP_SCM3_014 | SCM-003 | Manager approval workflow not initiated when price increase equals exactly 50% |
-| DEF-CNS-001 | UT_CNS_004 | CNS-001 | SMS gateway timeout prevents delivery |
-| DEF-CNS-002 | UT_CNS_006 | CNS-001 | SMS tracking service failed to update status |
-| DEF-CNS-003 | UT_CNS_009 | CNS-001 | Push notification service unavailable |
+| DEF-ORM-001 | UT_SCM1_005 | SCM-001 | Notification template rendering issue |
+| DEF-ORM-002 | UT_SCM1_009 | SCM-001 | Refund workflow synchronization error |
+| DEF-SCM-101 | TP_SCM_008 | SCM-002 | Pause reason not captured consistently |
+| DEF-SCM-102 | TP_SCM_009 | SCM-002 | Activation allowed without completed approval |
+| DEF-SCM3-101 | TP_SCM3_004 | SCM-003 | Revised billing amount not included in upgrade confirmation notification |
+| DEF-SCM3-102 | TP_SCM3_009 | SCM-003 | Manager approval workflow not initiated when price increase equals exactly 50% |
+| DEF-SCM4-101 | TP_SCM4_004 | SCM-004 | Applicable refund details not included in cancellation confirmation notification |
+| DEF-SCM4-102 | TP_SCM4_009 | SCM-004 | Finance team approval workflow fails for mixed currency outstanding balances |
+| DEF-SCM5-101 | TP_SCM5_005 | SCM-005 | Renewal amount not populated in 30-day reminder notification for monthly billing plans |
+| DEF-SCM5-103 | TP_SCM5_011 | SCM-005 | System sends reminder even when subscription expiry date is null |
+| DEF-SCM5-104 | TP_SCM5_013 | SCM-005 | Boundary condition error: $10,000 subscription flagged as high-value instead of requiring value >$10,000 |
+| DEF-SCM5-105 | TP_SCM5_015 | SCM-005 | Reminder log delivery status remains blank when notification channel fails |
+| DEF-SCM6-101 | TP_SCM6_005 | SCM-006 | Adjusted billing amount not included in downgrade confirmation notification to customer |
+| DEF-SCM6-102 | TP_SCM6_012 | SCM-006 | Audit log not created when downgrade results in zero credit amount |
+| DEF-SCM6-103 | TP_SCM6_015 | SCM-006 | Enterprise downgrade not held pending state; processed immediately bypassing approval workflow |
 
 ## Conclusion
 
-The report indicates outstanding coverage and execution issues that require remediation before progression. Multiple user stories contain partially covered acceptance criteria with critical coverage gaps, and 15 test cases have failed with 12 defects identified across all user stories.
+Remediation is required as multiple user stories have coverage gaps, test case failures exist, and defects are present in the system.
