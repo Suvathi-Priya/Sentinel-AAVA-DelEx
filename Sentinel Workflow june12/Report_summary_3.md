@@ -1,12 +1,10 @@
-<div align="center"><strong><span style="font-size:28px;">UNIT TEST QUALITY & COVERAGE REPORT</span></strong></div>
+# UNIT TEST QUALITY & COVERAGE REPORT
 
-# Scope
+## Scope
 
-This report evaluates unit test coverage and quality across 4 user stories.
+This report evaluates unit test coverage and quality across 3 user stories. The scope is restricted to test plans and execution records mapped to these user stories.
 
-The scope is restricted to test plans and execution records mapped to these user stories. Analysis excludes non-unit test activities and unrelated defect categories. The baseline for evaluation consists of SCM-001, SCM-002, SCM-003, and SCM-004 user stories with their associated acceptance criteria and unit test cases.
-
-# Test Coverage Summary
+Analysis excludes non-unit test activities and unrelated defect categories. The baseline for evaluation consists of SCM-001, SCM-002, and SCM-003 user stories, forming the reference for measuring coverage, execution success, and defect quality.
 
 ## Coverage Gap Details
 
@@ -18,16 +16,16 @@ The scope is restricted to test plans and execution records mapped to these user
 | SCM-002 | AC4 | No testcase explicitly validates pause start date capture in audit log. | Partially Covered |
 | SCM-003 | AC3 | No testcase explicitly validates next billing cycle changes visibility in portal. | Partially Covered |
 
-# Consistency Analysis
+## Consistency Analysis
 
-## Data Mapping Inconsistency Details
+### Data Mapping Inconsistency Details
 
 | Test Case ID | Consistency Type | Description | User Story ID | AC ID | Impact Level |
 |---|---|---|---|---|---|
 | TP_SCM3_014 | missing_testlog | Execution log is missing for testcase ID: TP_SCM3_014 | SCM-003 | NULL | Medium |
 | TP_SCM3_015 | missing_testlog | Execution log is missing for testcase ID: TP_SCM3_015 | SCM-003 | NULL | Medium |
 
-## Consistency Metrics Summary
+### Consistency Metrics Summary
 
 | Metric | Count |
 |---|---|
@@ -37,36 +35,19 @@ The scope is restricted to test plans and execution records mapped to these user
 | Missing Test Logs | 2 |
 | Consistency Status | Mismatch Detected |
 
-# Defect Details
+## Defect Details
 
-SCM-001 - Implement Order Refund Management Service
+### Defect Details
 
 | Defect ID | Test Case ID | User Story ID | Defect Description |
 |---|---|---|---|
 | DEF-ORM-001 | UT_SCM1_005 | SCM-001 | Notification template rendering issue |
 | DEF-ORM-002 | UT_SCM1_009 | SCM-001 | Refund workflow synchronization error |
-
-SCM-002 - Subscription Pause Management Service
-
-| Defect ID | Test Case ID | User Story ID | Defect Description |
-|---|---|---|---|
 | DEF-SCM-101 | TP_SCM_008 | SCM-002 | Pause reason not captured consistently |
 | DEF-SCM-102 | TP_SCM_009 | SCM-002 | Activation allowed without completed approval |
-
-SCM-003 - Subscription Upgrade Request Processing
-
-| Defect ID | Test Case ID | User Story ID | Defect Description |
-|---|---|---|---|
 | DEF-SCM3-101 | TP_SCM3_004 | SCM-003 | Revised billing amount not included in upgrade confirmation notification |
 | DEF-SCM3-102 | TP_SCM3_009 | SCM-003 | Manager approval workflow not initiated when price increase equals exactly 50% |
 
-SCM-004
+## Conclusion
 
-| Defect ID | Test Case ID | User Story ID | Defect Description |
-|---|---|---|---|
-| DEF-SCM4-101 | TP_SCM4_004 | SCM-004 | Applicable refund details not included in cancellation confirmation notification |
-| DEF-SCM4-102 | TP_SCM4_009 | SCM-004 | Finance team approval workflow fails for mixed currency outstanding balances |
-
-# Conclusion
-
-Remediation is required as coverage gaps exist across multiple user stories and 8 defects have been identified in the test execution results.
+Remediation is required as multiple user stories have partial coverage gaps and active defects exist. The unit test suite requires additional test cases to address coverage gaps in fraud review validation, notification content completeness, and portal visibility features before progression.
