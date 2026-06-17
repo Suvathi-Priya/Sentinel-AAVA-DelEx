@@ -1,20 +1,21 @@
-<div align="center"><strong><span style="font-size:24px;">UNIT TEST QUALITY & COVERAGE REPORT</span></strong></div>
+<div align="center">
+
+# **UNIT TEST QUALITY & COVERAGE REPORT**
+
+</div>
 
 # Scope
 
 This report evaluates unit test coverage and quality across 6 user stories. The scope is restricted to test plans and execution records mapped to these user stories. Analysis excludes non-unit test activities and unrelated defect categories.
 
-The 6 user stories form the baseline for evaluation:
-- SCM-006: Subscription Downgrade Management
-- SCM-005: Subscription Renewal Reminder Service  
-- SCM-004: Subscription Cancellation Workflow
-- SCM-003: Subscription Upgrade Request Processing
-- SCM-002: Subscription Pause Management Service
-- SCM-001: Implement Order Refund Management Service
+The evaluation encompasses:
+- Unit test cases linked to the identified user stories
+- Test execution results (executed, not executed, passed, failed)
+- Defect data directly associated with these user stories
 
-# Test Coverage Summary
+The baseline reference consists of 6 user stories for measuring coverage, execution success, and defect quality.
 
-## Coverage Gap Details
+# Coverage Gap Details
 
 | User Story ID | AC ID | Coverage Gap Reason | Coverage Status |
 |---------------|-------|---------------------|-----------------|
@@ -55,8 +56,6 @@ The 6 user stories form the baseline for evaluation:
 
 # Defect Details
 
-## Defect Details
-
 | Defect ID | Test Case ID | User Story ID | Defect Description |
 |-----------|--------------|---------------|-------------------|
 | DEF-SCM6-101 | TP_SCM6_005 | SCM-006 | Adjusted billing amount not included in downgrade confirmation notification to customer |
@@ -77,4 +76,4 @@ The 6 user stories form the baseline for evaluation:
 
 # Conclusion
 
-Remediation is required as multiple user stories have Partially Covered status and 15 defects exist across all user stories.
+Remediation is required as multiple user stories have Partially Covered status and 15 defects exist across the test execution results.
